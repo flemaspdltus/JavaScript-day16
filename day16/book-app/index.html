@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도서 관리 앱</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>도서 관리 앱</h1>
+
+    <div class="input-section">
+        <input type="text" class="book-input" id="bookTitle" placeholder="도서 제목">
+        <input type="number" class="book-input" id="bookPrice" placeholder="가격 (원)">
+        <button class="add-button book-button" onclick="addBook()">추가</button>
+    </div>
+
+    <div class="book-container">
+        <h2>현재 도서 목록</h2>
+        <ul class="book-list" id="bookList">
+            </ul>
+        
+        <div class="action-buttons">
+            <button class="process-button book-button" onclick="processBooks()">도서 처리</button>
+            <button class="status-button book-button" onclick="showAllRentalStatus()">대여 상태 보기</button>
+        </div>
+
+        <div id="results" class="results-section">
+            </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
