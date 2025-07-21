@@ -1,0 +1,206 @@
+/* styles.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e0e7e9; /* Light grayish blue */
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.calculator-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    text-align: center;
+    width: 340px;
+    max-width: 90%;
+    position: relative;
+    overflow: hidden; /* To contain shadows */
+}
+
+h1 {
+    font-size: 1.8em;
+    color: #2c3e50; /* Dark blue-gray */
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.display-area {
+    background-color: #f0f4f7; /* Lighter background for display */
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: right;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.sub-display {
+    font-size: 0.9em;
+    color: #7f8c8d; /* Grayish blue */
+    min-height: 1.2em;
+    opacity: 0.8;
+}
+
+.main-display {
+    font-size: 2.8em;
+    font-weight: bold;
+    min-height: 1.5em;
+    color: #2c3e50; /* Dark blue-gray */
+    word-wrap: break-word; /* Prevents long numbers from overflowing */
+    overflow-x: auto; /* Allows horizontal scrolling for very long numbers */
+    white-space: nowrap; /* Keeps numbers on one line unless word-wrap breaks them */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+
+.main-display::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, Opera */
+}
+
+
+.main-display.error {
+    color: #e74c3c; /* Red for errors */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    padding: 18px 10px;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #ecf0f1; /* Light gray */
+    color: #34495e; /* Darker blue-gray */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    user-select: none; /* Prevent text selection on double click */
+}
+
+.btn:hover {
+    background-color: #dfe6e9; /* Slightly darker gray on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    background-color: #bdc3c7; /* Even darker gray on active */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transform: translateY(1px);
+}
+
+/* Specific button styles */
+.btn-number {
+    background-color: #ffffff;
+}
+
+.btn-operator {
+    background-color: #f39c12; /* Orange */
+    color: white;
+}
+
+.btn-operator:hover {
+    background-color: #e67e22; /* Darker orange */
+}
+
+.btn-operator:active {
+    background-color: #d35400; /* Even darker orange */
+}
+
+.btn-equals {
+    background-color: #3498db; /* Blue */
+    color: white;
+    grid-column: span 2; /* Span two columns */
+    font-size: 1.6em;
+}
+
+.btn-equals:hover {
+    background-color: #2980b9; /* Darker blue */
+}
+
+.btn-equals:active {
+    background-color: #2270a6; /* Even darker blue */
+}
+
+.btn-clear, .btn-backspace {
+    background-color: #95a5a6; /* Grayish */
+    color: white;
+}
+
+.btn-clear:hover, .btn-backspace:hover {
+    background-color: #7f8c8d; /* Darker grayish */
+}
+
+.btn-clear:active, .btn-backspace:active {
+    background-color: #6c7a7b; /* Even darker grayish */
+}
+
+/* History area styles */
+.history-area {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e7e9; /* Light border */
+    text-align: left;
+    max-height: 200px; /* Limit history height */
+    overflow-y: auto; /* Enable scrolling for long history */
+    scrollbar-width: thin; /* Firefox scrollbar */
+    scrollbar-color: #bdc3c7 #f0f4f7; /* Firefox scrollbar color */
+}
+
+.history-area::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.history-area::-webkit-scrollbar-track {
+    background: #f0f4f7; /* Track background */
+    border-radius: 10px;
+}
+
+.history-area::-webkit-scrollbar-thumb {
+    background: #bdc3c7; /* Handle background */
+    border-radius: 10px;
+}
+
+.history-area h2 {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: center;
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#history-list li {
+    padding: 10px 15px;
+    border-bottom: 1px dashed #ecf0f1; /* Dashed separator */
+    font-size: 0.9em;
+    color: #666;
+    transition: background-color 0.1s ease-in-out;
+}
+
+#history-list li:last-child {
+    border-bottom: none;
+}
+
+#history-list li:nth-child(even) {
+    background-color: #f9fbfb; /* Subtle alternating background */
+}

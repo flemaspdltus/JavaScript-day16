@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES 모듈 계산기</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>ES 모듈 계산기</h1>
+
+        <div class="display-area">
+            <div id="sub-display" class="sub-display"></div>
+            <div id="result" class="main-display">0</div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-number" data-value="7">7</button>
+            <button class="btn btn-number" data-value="8">8</button>
+            <button class="btn btn-number" data-value="9">9</button>
+            <button class="btn btn-operator" data-value="/">/</button>
+
+            <button class="btn btn-number" data-value="4">4</button>
+            <button class="btn btn-number" data-value="5">5</button>
+            <button class="btn btn-number" data-value="6">6</button>
+            <button class="btn btn-operator" data-value="*">*</button>
+
+            <button class="btn btn-number" data-value="1">1</button>
+            <button class="btn btn-number" data-value="2">2</button>
+            <button class="btn btn-number" data-value="3">3</button>
+            <button class="btn btn-operator" data-value="-">-</button>
+
+            <button class="btn btn-number" data-value="0">0</button>
+            <button class="btn btn-number" data-value=".">.</button>
+            <button class="btn btn-equals" id="btn-equals">=</button>
+            <button class="btn btn-operator" data-value="+">+</button>
+            <button class="btn btn-operator" data-value="^">x²</button> <button class="btn btn-clear" id="btn-clear">C</button>
+            <button class="btn btn-backspace" id="btn-backspace">←</button>
+            <button class="btn btn-info" id="btn-show-history">기록 표시</button>
+        </div>
+
+        <div class="history-area" id="history-display-area" style="display: none;">
+            <h2>계산 기록</h2>
+            <ul id="history-list">
+                </ul>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
